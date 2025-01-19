@@ -1,0 +1,42 @@
+Name/Title: Complete Mobile Drug Testing (.com)
+
+Style: 
+- base the looks and format on abbott -> https://www.toxicology.abbott/us/en/index.html
+
+- logo colors like in the picture -> https://www.google.com/search?sca_esv=1298550bd62bb18e&rlz=1C1SQJL_srRS848RS848&sxsrf=ADLYWIJ8L-33gQvsKVs39vzN4AForqXM2w:1737242342220&q=complete+mobile+drug+testing&udm=2&fbs=AEQNm0Aa4sjWe7Rqy32pFwRj0UkWd8nbOJfsBGGB5IQQO6L3JyJJclJuzBPl12qJyPx7ESIJKsuo8DSJKOxlDDbn2sXiOtmsp6I7bcDRDl7IFQXOy1NtpK3OYS5fAsdkdQYhCqHvBV7efT4YpKFFQ6BJqo5xB2kGfqdxp_9Ws-ZTcvkEfzDAUNoaZmSgidNyYLyd7L5vmYZz&sa=X&ved=2ahUKEwiYnMmFtICLAxVoLBAIHRfaH24QtKgLegQIExAB&biw=1920&bih=929&dpr=1#vhid=r5gRQ_m1mOHejM&vssid=mosaic
+
+- gray blue and white (slate versions)
+
+- animations not neccesary but can be if they look good
+
+- sticky navbar
+
+- footer same as abboot -> https://www.toxicology.abbott/us/en/index.html
+
+Pages and links:
+https://completemobiledrugtesting.com/
+- NO covid-19
+- plus a dynamic dropdown
+
+
+Data:
+- franchises for dropdown
+- 
+
+
+Features:
+- a dynamic dropdown to add future franchises
+- franchise with a button that leads to franchise page which has a button
+that leads to a BIG FORM, this segment is after the basic information
+- NO searchBox
+- Social Media links
+
+Notes:
+
+https://www.escreen.com/us/en/home.html -> ovaj format/stil
+
+https://usamdt.com/ -> slicne informacije kao ovde
+
+https://completemobiledrugtesting.com/ -> tabovi/stranice + dynamic dropdown 
+
+https://www.robotlab.com/ -> RobotLAB Locations : ovaj deo je dosta bitan
