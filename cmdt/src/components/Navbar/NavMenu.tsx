@@ -8,7 +8,7 @@ interface NavMenuProps {
 
 const NavMenu: React.FC<NavMenuProps> = ({ links }) => {
   return (
-    <div className="flex flex-row flex-grow bg-blue-500 items-center">
+    <div className="flex flex-row flex-grow bg-slate-600 items-center py-2">
       {links.map((link, index) => {
         return <NavLink key={index} link={link} />;
       })}

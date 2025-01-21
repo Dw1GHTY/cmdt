@@ -4,7 +4,7 @@ import Logo from "../Logo";
 
 const Navbar = () => {
   return (
-    <nav className="flex flex-row">
+    <nav className="flex flex-row h-16">
       <Logo />
       <NavMenu
         links={[
