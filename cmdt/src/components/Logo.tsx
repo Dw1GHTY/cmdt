@@ -7,18 +7,18 @@ import { useRouter } from "next/navigation";
 const Logo = () => {
   const router = useRouter();
   return (
-    <div
-      className="cursor-pointer"
-      onClick={() => {
-        router.push("/");
-      }}
-    >
+    <div className="flex items-center mt-1 md:mt-0 h-full rounded-md">
       <Image
-        className="rounded-md"
+        className="cursor-pointer rounded-md"
+        onClick={() => {
+          router.push("/");
+        }}
+        alt="Complete Mobile Health logo"
         src={`/logo.jpg`}
-        alt="logo"
-        width={200}
-        height={100}
+        width={150}
+        height={40}
+        style={{ objectFit: "contain" }}
+        sizes="(max-width: 768px) 100px, (max-width: 1024px) 150px, 200px"
       />
     </div>
   );

@@ -10,7 +10,7 @@ const NavLink: React.FC<NavLinkProps> = ({ link }) => {
   return (
     <Link
       className="flex justify-center items-center text-white text-center 
-      h-full p-1 mx-2 hover:bg-slate-400 rounded-sm"
+      h-full p-1 mx-2 transition hover:delay-75 hover:bg-slate-400  rounded-sm"
       href={`${link.path}`}
     >
       {link.name}
