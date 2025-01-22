@@ -6,7 +6,7 @@ import NavMenuMobile from "./NavMenuMobile";
 const Navbar = () => {
   return (
     <nav
-      className="sticky flex flex-row w-screen h-fit top-0 z-10 
+      className="justify-between items-center md:justify-normal sticky flex flex-row w-screen h-fit top-0 z-10 
                 border-b-1 bg-slate-600 border-slate-400"
     >
       {/* //? Logo */}
@@ -19,10 +19,6 @@ const Navbar = () => {
             {
               name: "Home",
               path: "/",
-            },
-            {
-              name: "Franchises",
-              path: "",
             },
             {
               name: "Capability Statement",
@@ -49,7 +45,7 @@ const Navbar = () => {
       </div>
 
       {/* //? Mobile burger menu */}
-      <div className="flex md:hidden">
+      <div className="md:hidden flex justify-center size-20 p-2">
         <NavMenuMobile links={[{ name: "test", path: "test" }]} />
       </div>
     </nav>
