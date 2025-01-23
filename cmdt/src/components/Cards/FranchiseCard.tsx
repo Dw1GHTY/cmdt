@@ -11,11 +11,11 @@ import {
 import { useRouter } from "next/navigation";
 import { TCompany } from "@/types/TCompany";
 
-interface FranchiseProps {
+interface FranchiseCardProps {
   companyInfo: TCompany;
 }
 
-const Franchise: React.FC<FranchiseProps> = ({ companyInfo }) => {
+const FranchiseCard: React.FC<FranchiseCardProps> = ({ companyInfo }) => {
   const router = useRouter();
   return (
     <div
@@ -40,4 +40,4 @@ const Franchise: React.FC<FranchiseProps> = ({ companyInfo }) => {
   );
 };
 
-export default Franchise;
+export default FranchiseCard;
