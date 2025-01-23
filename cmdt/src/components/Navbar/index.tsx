@@ -1,6 +1,6 @@
 import React from "react";
-import NavMenu from "./NavMenu";
 import Logo from "../Logo";
+import NavMenuDesktop from "./NavMenuDesktop";
 import NavMenuMobile from "./NavMenuMobile";
 
 const Navbar = () => {
@@ -14,7 +14,7 @@ const Navbar = () => {
 
       {/* //? Navbar menu with links */}
       <div className="hidden md:flex">
-        <NavMenu
+        <NavMenuDesktop
           links={[
             {
               name: "Home",
@@ -46,7 +46,43 @@ const Navbar = () => {
 
       {/* //? Mobile burger menu */}
       <div className="md:hidden flex justify-center size-20 p-2">
-        <NavMenuMobile links={[{ name: "test", path: "test" }]} />
+        <NavMenuMobile
+          links={[
+            {
+              name: "Home",
+              path: "/",
+            },
+            {
+              name: "Franchises",
+              //! Only names and links for the franchises should go into mobile menu
+              submenu: [
+                { name: "Company1" },
+                { name: "Company2" },
+                { name: "Company3" },
+              ],
+            },
+            {
+              name: "Capability Statement",
+              path: "/capability_statement",
+            },
+            {
+              name: "Drug Testing",
+              path: "/drug_testing",
+            },
+            {
+              name: "Background Screening",
+              path: "/background_screening",
+            },
+            {
+              name: "DNA/Paternity Testing",
+              path: "/dna_paternity_testing",
+            },
+            {
+              name: "Contact Us",
+              path: "/contact",
+            },
+          ]}
+        />
       </div>
     </nav>
   );

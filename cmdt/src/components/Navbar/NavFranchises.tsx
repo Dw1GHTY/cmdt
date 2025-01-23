@@ -9,7 +9,8 @@ import {
 } from "../ui/navigation-menu";
 import { TCompany } from "@/types/TCompany";
 
-//TODO: Fetch companies from backend
+//TODO: Fetch companies from backend | POSSIBLY fetch data in navbar and pass neccessary data to
+//TODO: NavFranchises and NavMenuMobile
 const fetchedCompanies: Array<TCompany> = [
   {
     name: "Company 1",

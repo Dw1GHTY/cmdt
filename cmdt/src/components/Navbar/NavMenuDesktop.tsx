@@ -7,7 +7,7 @@ interface NavMenuProps {
   links: Array<TLink>;
 }
 
-const NavMenu: React.FC<NavMenuProps> = ({ links }) => {
+const NavMenuDesktop: React.FC<NavMenuProps> = ({ links }) => {
   return (
     <div className="flex flex-row flex-grow items-center py-2">
       <NavFranchises />
@@ -18,4 +18,4 @@ const NavMenu: React.FC<NavMenuProps> = ({ links }) => {
   );
 };
 
-export default NavMenu;
+export default NavMenuDesktop;

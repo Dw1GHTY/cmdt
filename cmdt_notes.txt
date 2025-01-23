@@ -16,7 +16,7 @@ Style:
 Pages and links:
 https://completemobiledrugtesting.com/
 - NO covid-19
-- plus a dynamic dropdown
+- plus a dynamic dropdown for franchises
 
 
 Data:
