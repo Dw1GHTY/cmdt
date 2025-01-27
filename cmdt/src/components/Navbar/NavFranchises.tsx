@@ -1,5 +1,5 @@
 import React from "react";
-import FranchiseCard from "../Cards/FranchiseCard";
+import FranchiseCardNav from "../Cards/FranchiseCardNav";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -45,7 +45,7 @@ const NavFranchises: React.FC = () => {
           <NavigationMenuContent className="flex flex-row size-fit ">
             {/* <NavigationMenuLink>Link</NavigationMenuLink> */}
             {fetchedCompanies.map((company, index) => {
-              return <FranchiseCard companyInfo={company} key={index} />;
+              return <FranchiseCardNav companyInfo={company} key={index} />;
             })}
           </NavigationMenuContent>
         </NavigationMenuItem>

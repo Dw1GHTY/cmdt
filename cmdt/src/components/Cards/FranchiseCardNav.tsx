@@ -15,7 +15,7 @@ interface FranchiseCardProps {
   companyInfo: TCompany;
 }
 
-const FranchiseCard: React.FC<FranchiseCardProps> = ({ companyInfo }) => {
+const FranchiseCardNav: React.FC<FranchiseCardProps> = ({ companyInfo }) => {
   const router = useRouter();
   return (
     <div
@@ -40,4 +40,4 @@ const FranchiseCard: React.FC<FranchiseCardProps> = ({ companyInfo }) => {
   );
 };
 
-export default FranchiseCard;
+export default FranchiseCardNav;
