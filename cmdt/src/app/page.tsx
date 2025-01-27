@@ -7,12 +7,12 @@ const page = () => {
       <div className="mt-24">
         <HomeCarousel />
       </div>
+      <div className="flex text-4xl">About us segment</div>
       {/* //? LOCATIONS SEGMENT */}
       <div className="flex border-2 w-full border-black ">
         <Locations />
       </div>
       {/* //?  */}
-      <div className="flex text-4xl">About us segment</div>
       <div className="flex text-4xl">Segment 4</div>
     </div>
   );

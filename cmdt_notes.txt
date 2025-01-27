@@ -34,6 +34,7 @@ Features:
 that leads to a BIG FORM, this segment is after the basic information
 - NO searchBox
 - Social Media links
+- Contact us FORM almost exactly the same as usmdt
 
 Notes:
 
