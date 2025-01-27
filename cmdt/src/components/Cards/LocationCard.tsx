@@ -8,15 +8,17 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useRouter } from "next/navigation";
+// TODO: add router for onClick redirection
+import Image from "next/image";
 
 const LocationCard: React.FC = () => {
-  const router = useRouter();
   return (
     <Card className="flex flex-col w-fit my-2 mx-1 md:mx-2">
       <CardHeader>
         <CardTitle>Card Title</CardTitle>
-        <CardDescription>Card Description</CardDescription>
+        <CardDescription>
+          <Image alt="test" src="/city1.jpg" width={100} height={100} />
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <p>Card Content</p>

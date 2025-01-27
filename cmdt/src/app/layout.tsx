@@ -1,8 +1,10 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ReactQueryProvider from "@/components/ReactQueryProvider";
+import { Geist, Geist_Mono } from "next/font/google";
+import { connectToMongoDB } from "../../db_services/db";
+import type { Metadata } from "next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,19 +26,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  connectToMongoDB();
+  //! useQuery ce koristiti pojedinacno Navbar, NavMenuMobile i Home Page
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased 
         flex flex-col min-h-screen w-screen`}
       >
-        <header className="flex">
-          <Navbar />
-        </header>
-        <main className="flex flex-grow bg-slate-100">{children}</main>
-        <footer className="flex bg-slate-700">
-          <Footer />
-        </footer>
+        <ReactQueryProvider>
+          <header className="flex">
+            <Navbar />
+          </header>
+          <main className="flex flex-grow bg-slate-100">{children}</main>
+          <footer className="flex bg-slate-700">
+            <Footer />
+          </footer>
+        </ReactQueryProvider>
       </body>
     </html>
   );

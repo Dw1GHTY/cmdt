@@ -11,6 +11,7 @@ import {
 } from "../ui/dropdown-menu";
 import Link from "next/link";
 import NavDropdown from "./NavDropdown";
+
 interface NavMenuMobileProps {
   links: Array<TLink>;
 }

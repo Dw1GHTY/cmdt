@@ -21,13 +21,13 @@ const FranchiseCardNav: React.FC<FranchiseCardProps> = ({ companyInfo }) => {
     <div
       className="flex size-fit m-1"
       onClick={() => {
-        router.push(`${companyInfo.link}`);
+        router.push(`${companyInfo.LINK}`);
       }}
     >
       <Card className="w-fit transition delay-75 bg-slate-200 hover:bg-slate-400 cursor-pointer">
         <CardHeader>
-          <CardTitle>{companyInfo.name}</CardTitle>
-          <CardDescription>{companyInfo.address}</CardDescription>
+          <CardTitle>{companyInfo.LOCATION}</CardTitle>
+          <CardDescription>{companyInfo.DESCRIPTION}</CardDescription>
         </CardHeader>
         <CardContent>
           <p>Card Content</p>

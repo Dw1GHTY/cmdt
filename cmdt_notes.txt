@@ -20,9 +20,13 @@ https://completemobiledrugtesting.com/
 
 
 Data:
-- franchises for dropdown
-- 
-
+- Companies/Franchises
+- Entity:
+	location: string
+	description: string
+	link: string
+	image: <image?>
+	
 
 Features:
 - a dynamic dropdown to add future franchises

@@ -1,6 +1,8 @@
+import { ObjectId } from "mongoose";
+
 export type TCompany = {
-  name: string;
-  link: string;
-  description?: string;
-  address: string;
+  LOCATION: string;
+  DESCRIPTION: string;
+  LINK: string;
+  _id?: ObjectId 
 };

@@ -1,9 +1,31 @@
+"use client";
 import React from "react";
 import Logo from "../Logo";
 import NavMenuDesktop from "./NavMenuDesktop";
 import NavMenuMobile from "./NavMenuMobile";
+import { useQuery } from "@tanstack/react-query";
+import NavbarSekeleton from "../Skeletons/NavbarSekeleton";
+import { TCompany } from "@/types/TCompany";
 
 const Navbar = () => {
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["companies"],
+    queryFn: async () => {
+      const url = `${window.location.origin}/api/companies`;
+      const response = await fetch(url, { method: "GET" });
+      const data = await response.json();
+      return await data;
+    },
+  });
+  if (isLoading) return <NavbarSekeleton />;
+  if (isError)
+    return <span className="text-red-600">Sorry There was an Error</span>;
+
+  //! Generated submenu for NavMenuMobile
+  const franchiseSubmenu = data?.map((company: TCompany) => ({
+    name: company.LOCATION,
+    path: company.LINK,
+  }));
   return (
     <nav
       className="fixed h-fit top-0 z-10 flex flex-row justify-between items-center md:justify-normal  w-screen 
@@ -16,6 +38,7 @@ const Navbar = () => {
       <div className="hidden md:flex">
         <NavMenuDesktop
           //!Pass fetched data from DB
+          companies={data}
           links={[
             {
               name: "Home",
@@ -56,12 +79,7 @@ const Navbar = () => {
             },
             {
               name: "Franchises",
-              //! Only names and links for the franchises should go into mobile menu
-              submenu: [
-                { name: "Company1" },
-                { name: "Company2" },
-                { name: "Company3" },
-              ],
+              submenu: franchiseSubmenu,
             },
             {
               name: "Capability Statement",
