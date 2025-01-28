@@ -1,4 +1,5 @@
 import HomeCarousel from "@/components/Carousels/HomeCarousel";
+import AboutUs from "@/components/Segments/Home/AboutUs";
 import Locations from "@/components/Segments/Home/Locations";
 import React from "react";
 const page = () => {
@@ -7,9 +8,12 @@ const page = () => {
       <div className="mt-24">
         <HomeCarousel />
       </div>
-      <div className="flex text-4xl">About us segment</div>
+      <h2 className="text-5xl italic text-center text-blue-800 font-semibold my-3">
+        Welcome to Complete Mobile Drug Testing
+      </h2>
+      <AboutUs />
       {/* //? LOCATIONS SEGMENT */}
-      <div className="flex border-2 w-full border-black ">
+      <div className="flex w-full ">
         <Locations />
       </div>
       {/* //?  */}
