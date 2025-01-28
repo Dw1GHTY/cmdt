@@ -5,9 +5,19 @@ import React from "react";
 const page = () => {
   return (
     <div className="flex flex-col justify-center items-center size-full">
-      <div className="mt-24">
-        <HomeCarousel />
-      </div>
+      <HomeCarousel
+        slides={[
+          {
+            imagePath: "/stock1.jpg",
+          },
+          {
+            imagePath: "/stock2.jpg",
+          },
+          {
+            imagePath: "/stock3.jpg",
+          },
+        ]}
+      />
       <h2 className="text-5xl italic text-center text-blue-800 font-semibold my-3">
         Welcome to Complete Mobile Drug Testing
       </h2>

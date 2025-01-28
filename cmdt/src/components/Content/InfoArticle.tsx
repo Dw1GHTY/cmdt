@@ -28,7 +28,7 @@ const InfoArticle: React.FC<InfoArticleProps> = (props) => {
               </h3>
               <Separator
                 orientation="horizontal"
-                className="w-1/2 bg-blue-800 h-2 rounded-lg"
+                className="w-1/2 bg-blue-800 h-1 rounded-lg"
               />
               <p>{paragraph.text}</p>
             </article>

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Carousel,
@@ -7,26 +8,62 @@ import {
   CarouselPrevious,
 } from "../ui/carousel";
 import { Card, CardContent } from "../ui/card";
+import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay";
 
-const HomeCarousel = () => {
+type TSlide = {
+  title?: string;
+  caption?: string;
+  //TODO: shadcn <AspectRatio> za slike u carousel
+  imagePath: string;
+};
+
+interface HomeCarouselProps {
+  slides: Array<TSlide>;
+}
+
+const HomeCarousel: React.FC<HomeCarouselProps> = (props) => {
+  const { slides } = props;
   return (
-    <Carousel className="w-full max-w-sm md:max-w-md">
-      <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index}>
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-video items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+    <div className="flex flex-col items-center justify-center mt-24 w-full relative">
+      <Carousel
+        plugins={[
+          Autoplay({
+            delay: 3500,
+          }),
+        ]}
+        opts={{
+          loop: true,
+        }}
+        className="w-full md:w-[80%] max-w-full md:max-w-8xl h-full"
+      >
+        {/* Controls carousel width */}
+        <CarouselContent className="h-[40vh]">
+          {/* Controls content height */}
+          {slides.map((slide, index) => {
+            return (
+              <CarouselItem key={index} className="flex justify-center h-full">
+                <Card className="flex items-center justify-center size-full overflow-hidden">
+                  <CardContent className="flex items-center justify-center h-full w-full p-0">
+                    <div className="relative w-full h-full">
+                      <Image
+                        alt="image"
+                        src={slide.imagePath}
+                        layout="fill" // Fills the parent div
+                        objectFit="cover" // Ensures the image covers without distortion
+                        className="rounded-lg"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            );
+          })}
+        </CarouselContent>
+        <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2" />
+        <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2" />
+      </Carousel>
+    </div>
   );
 };
 
