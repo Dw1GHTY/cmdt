@@ -9,6 +9,7 @@ import { TCompany } from "@/types/TCompany";
 
 const Navbar = () => {
   const { data, isLoading, isError } = useQuery({
+    refetchInterval: 30000,
     queryKey: ["companies"],
     queryFn: async () => {
       const url = `${window.location.origin}/api/companies`;
@@ -28,8 +29,11 @@ const Navbar = () => {
   }));
   return (
     <nav
-      className="fixed h-fit top-0 z-10 flex flex-row justify-between items-center md:justify-normal  w-screen 
-                border-b-1 bg-slate-600 border-slate-400"
+      className="fixed h-fit top-0 z-10 flex flex-row justify-between items-center md:justify-normal w-screen 
+                border-b-2 border-b-blue-800 
+                shadow-sm shadow-blue-900 
+                bg-gradient-to-r from-blue-700 to-slate-400
+                backdrop-filter backdrop-blur-lg bg-opacity-5"
     >
       {/* //? Logo */}
       <Logo />

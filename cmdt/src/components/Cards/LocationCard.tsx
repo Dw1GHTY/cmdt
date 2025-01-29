@@ -13,7 +13,7 @@ import Image from "next/image";
 
 const LocationCard: React.FC = () => {
   return (
-    <Card className="flex flex-col w-fit my-2 mx-1 md:mx-2">
+    <Card className="flex flex-col justify-center items-center w-72 my-2 mx-1 md:mx-2">
       <CardHeader>
         <CardTitle>Card Title</CardTitle>
         <CardDescription>

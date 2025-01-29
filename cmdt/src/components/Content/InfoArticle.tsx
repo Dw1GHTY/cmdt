@@ -1,5 +1,4 @@
 import React from "react";
-import { Separator } from "../ui/separator";
 
 //! Ako se naidje na NEWLINE u stringu, renderuje se <br />
 type TParagraph = {
@@ -15,7 +14,13 @@ interface InfoArticleProps {
 const InfoArticle: React.FC<InfoArticleProps> = (props) => {
   const { paragraphs } = props;
   return (
-    <section className="flex flex-col w-full md:w-2/3 bg-white rounded-md drop-shadow-lg">
+    <section
+      className="
+    flex flex-col w-full md:w-2/3 
+    rounded-xl drop-shadow-3xl shadow-slate-400
+    font-sans
+    isolate  bg-white/30 shadow-lg ring-1 ring-black/5"
+    >
       {paragraphs.map((paragraph, index) => {
         return paragraph.title ? (
           <>
@@ -23,21 +28,17 @@ const InfoArticle: React.FC<InfoArticleProps> = (props) => {
               key={index}
               className="flex flex-col items-center justify-center px-1"
             >
-              <h3 className="text-3xl text-center font-semibold">
+              <h3 className="text-3xl my-2 text-center font-semibold">
                 {paragraph.title}
               </h3>
-              <Separator
-                orientation="horizontal"
-                className="w-1/2 bg-blue-800 h-1 rounded-lg"
-              />
-              <p>{paragraph.text}</p>
+              <p className="text-xl">{paragraph.text}</p>
             </article>
             <br />
           </>
         ) : (
           <>
             <article key={index} className="px-1">
-              <p>{paragraph.text}</p>
+              <p className="text-xl">{paragraph.text}</p>
             </article>
             <br />
           </>

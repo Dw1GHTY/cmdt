@@ -18,18 +18,22 @@ const Locations: React.FC = () => {
   if (isError)
     return <span className="text-white">Sorry There was an Error</span>;
   return (
-    <section className="flex flex-col w-full">
-      <h1 className="text-4xl text-center my-2">
-        Complete Mobile Drug Testing
-        <span className="text-blue-900 font-bold"> Locations</span>
-      </h1>
-      <div className="flex flex-row justify-center items-center flex-wrap md:flex-row w-full">
-        {/* //! Fetched companies here */}
-        {data.map((company: TCompany, index: number) => {
-          return <LocationCard key={index} />;
-        })}
-      </div>
-    </section>
+    <div className="flex w-full bg-blue-950 shadow-md shadow-sky-300 my-6">
+      <section className="flex flex-col w-full">
+        <h1 className="text-4xl text-center text-white my-2">
+          Complete Mobile Drug Testing
+        </h1>
+        <span className="text-white text-center text-6xl font-bold">
+          Locations
+        </span>
+        <div className="flex flex-row justify-center items-center flex-wrap md:flex-row w-full">
+          {/* //! Fetched companies here */}
+          {data.map((company: TCompany, index: number) => {
+            return <LocationCard key={index} />;
+          })}
+        </div>
+      </section>
+    </div>
   );
 };
 

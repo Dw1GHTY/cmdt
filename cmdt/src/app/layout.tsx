@@ -32,14 +32,15 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased 
-        flex flex-col min-h-screen w-screen`}
+        flex flex-col min-h-screen w-screen
+        `}
       >
         <ReactQueryProvider>
           <header className="flex">
             <Navbar />
           </header>
           <main className="flex flex-grow bg-slate-100">{children}</main>
-          <footer className="flex bg-slate-700">
+          <footer className="flex">
             <Footer />
           </footer>
         </ReactQueryProvider>

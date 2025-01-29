@@ -9,8 +9,9 @@ interface NavLinkProps {
 const NavLink: React.FC<NavLinkProps> = ({ link }) => {
   return (
     <Link
-      className="flex justify-center items-center text-white text-center 
-      h-full p-1 mx-2 transition hover:delay-75 hover:bg-slate-400  rounded-sm"
+      className="flex justify-center items-center h-full p-1 mx-2 
+      text-white text-center 
+      rounded-md transition delay-100 hover:bg-cyan-500"
       href={`${link.path}`}
     >
       {link.name}

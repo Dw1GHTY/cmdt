@@ -16,7 +16,7 @@ interface NavFranchisesProps {
 
 const NavFranchises: React.FC<NavFranchisesProps> = ({ companies }) => {
   return (
-    <NavigationMenu className="mx-1">
+    <NavigationMenu className="mx-1 ">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Franchises</NavigationMenuTrigger>
