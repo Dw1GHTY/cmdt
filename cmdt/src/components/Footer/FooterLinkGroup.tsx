@@ -1,7 +1,6 @@
 import { TLink } from "@/types/TLink";
 import Link from "next/link";
 import React from "react";
-import { Separator } from "../ui/separator";
 
 interface FooterLinkGroupProps {
   links: Array<TLink>;
@@ -10,7 +9,7 @@ interface FooterLinkGroupProps {
 const FooterLinkGroup: React.FC<FooterLinkGroupProps> = (props) => {
   const { links } = props;
   return (
-    <div className="flex flex-row mx-2">
+    <div className="flex flex-row mx-2 justify-center items-center">
       <ul className="flex flex-col size-fit">
         {links.map((link, index) => {
           return (
@@ -25,7 +24,10 @@ const FooterLinkGroup: React.FC<FooterLinkGroupProps> = (props) => {
           );
         })}
       </ul>
-      <Separator orientation="vertical" className="bg-white w-1 ml-2" />
+      {/* <Separator
+        orientation="vertical"
+        className="bg-white w-1 ml-2 rounded-md"
+      /> */}
     </div>
   );
 };
