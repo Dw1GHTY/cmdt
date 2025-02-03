@@ -6,6 +6,9 @@ import React from "react";
 const page = () => {
   return (
     <div className="flex flex-col justify-center items-center size-full">
+      <h1 className="text-4xl md:text-7xl italic text-center text-blue-950 font-semibold font-sans mt-28 mb-8">
+        Welcome to Complete Mobile Drug Testing
+      </h1>
       <HomeCarousel
         slides={[
           {
@@ -19,9 +22,7 @@ const page = () => {
           },
         ]}
       />
-      <h1 className="text-4xl md:text-7xl italic text-center text-blue-950 font-semibold font-sans my-3">
-        Welcome to Complete Mobile Drug Testing
-      </h1>
+
       <AboutUs />
       {/* //? LOCATIONS SEGMENT */}
       <Separator

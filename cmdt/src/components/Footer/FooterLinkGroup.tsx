@@ -1,4 +1,5 @@
 import { TLink } from "@/types/TLink";
+import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -13,13 +14,12 @@ const FooterLinkGroup: React.FC<FooterLinkGroupProps> = (props) => {
       <ul className="flex flex-col size-fit">
         {links.map((link, index) => {
           return (
-            <li className="my-0.5" key={index}>
-              <Link
-                className="text-white underline hover:text-cyan-400"
-                href={link.path || "#"}
-              >
-                {link.name}
-              </Link>
+            <li
+              className="flex flex-row my-0.5 text-white underline hover:text-blue-900"
+              key={index}
+            >
+              <ArrowRightIcon className="w-4" />
+              <Link href={link.path || "#"}>{link.name}</Link>
             </li>
           );
         })}

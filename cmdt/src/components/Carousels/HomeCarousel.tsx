@@ -25,7 +25,7 @@ interface HomeCarouselProps {
 const HomeCarousel: React.FC<HomeCarouselProps> = (props) => {
   const { slides } = props;
   return (
-    <div className="flex flex-col items-center justify-center mt-24 w-full relative">
+    <div className="flex flex-col items-center justify-center w-full relative">
       <Carousel
         plugins={[
           Autoplay({

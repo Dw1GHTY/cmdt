@@ -17,9 +17,8 @@ const InfoArticle: React.FC<InfoArticleProps> = (props) => {
     <section
       className="
     flex flex-col w-full md:w-2/3 
-    rounded-xl drop-shadow-3xl shadow-slate-400
     font-sans
-    isolate  bg-white/30 shadow-lg ring-1 ring-black/5"
+    "
     >
       {paragraphs.map((paragraph, index) => {
         return paragraph.title ? (
