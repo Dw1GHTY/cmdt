@@ -4,13 +4,15 @@ export interface ICompany {
   LOCATION: string;
   DESCRIPTION: string;
   LINK: string;
+  IMAGE: string;
   _id?: ObjectId;
 }
 
 export interface ICompanyDocument extends ICompany, Document {
-    LOCATION: string;
+  LOCATION: string;
   DESCRIPTION: string;
   LINK: string;
+  IMAGE: string;
   _id?: ObjectId;
 }
 
@@ -25,6 +27,10 @@ const companySchema = new mongoose.Schema<ICompanyDocument>(
       required: true,
     },
     LINK: {
+      type: String,
+      required: true,
+    },
+    IMAGE: {
       type: String,
       required: true,
     },

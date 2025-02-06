@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import LocationCard from "@/components/Cards/LocationCard";
+import FranchiseCard from "@/components/Cards/FranchiseCard";
 import { useQuery } from "@tanstack/react-query";
 import { TCompany } from "@/types/TCompany";
 
@@ -29,7 +29,7 @@ const Locations: React.FC = () => {
         <div className="flex flex-row justify-center items-center flex-wrap md:flex-row w-full">
           {/* //! Fetched companies here */}
           {data.map((company: TCompany, index: number) => {
-            return <LocationCard key={index} />;
+            return <FranchiseCard key={index} />;
           })}
         </div>
       </section>

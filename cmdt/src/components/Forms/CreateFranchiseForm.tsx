@@ -14,32 +14,30 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { addFranchise } from "@/lib/actions";
 
 const formSchema = z.object({
   LOCATION: z.string().min(2).max(50),
   DESCRIPTION: z.string().min(2).max(50),
   LINK: z.string().min(2).max(50),
+  IMAGE: z.string().optional(),
 });
 
-const CreateCompanyForm: React.FC = () => {
+const CreateFranchiseForm: React.FC = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       LOCATION: "",
       DESCRIPTION: "",
       LINK: "",
+      IMAGE: "",
     },
   });
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-  }
+
   return (
     <div className="flex size-fit rounded-md">
       <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className=" flex flex-col space-y-8"
-        >
+        <form action={addFranchise} className=" flex flex-col space-y-8">
           <FormField
             control={form.control}
             name="LOCATION"
@@ -84,12 +82,41 @@ const CreateCompanyForm: React.FC = () => {
             name="LINK"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Username</FormLabel>
+                <FormLabel>Franchise Link</FormLabel>
                 <FormControl>
                   <Input placeholder="https://www.google.com" {...field} />
                 </FormControl>
                 <FormDescription>
                   A link towards the website of the new Franchise, not mandatory
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="IMAGE"
+            render={({ field: { onChange, ...rest } }) => (
+              <FormItem>
+                <FormLabel>Location picture</FormLabel>
+                <FormControl>
+                  <Input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => {
+                      const file = e.target.files?.[0];
+                      if (file) {
+                        const reader = new FileReader();
+                        reader.readAsDataURL(file); // Convert to Base64
+                        reader.onloadend = () => {
+                          form.setValue("IMAGE", reader.result as string); // Store Base64
+                        };
+                      }
+                    }}
+                  />
+                </FormControl>
+                <FormDescription>
+                  Image of the Franchise to be displayed on the main page
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -104,4 +131,4 @@ const CreateCompanyForm: React.FC = () => {
   );
 };
 
-export default CreateCompanyForm;
+export default CreateFranchiseForm;
