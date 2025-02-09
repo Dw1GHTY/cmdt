@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -34,10 +34,39 @@ const CreateFranchiseForm: React.FC = () => {
     },
   });
 
+  const [base64Image, setBase64Image] = useState<string | null>(null);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file); // Convert to Base64
+      reader.onloadend = () => {
+        setBase64Image(reader.result as string); // Store Base64
+      };
+    }
+  };
+
+  const handleSubmit = async (data: z.infer<typeof formSchema>) => {
+    const formData = new FormData();
+    formData.append("LOCATION", data.LOCATION);
+    formData.append("DESCRIPTION", data.DESCRIPTION);
+    formData.append("LINK", data.LINK);
+
+    if (base64Image) {
+      formData.append("IMAGE", base64Image);
+    }
+
+    await addFranchise(formData);
+  };
+
   return (
     <div className="flex size-fit rounded-md">
       <Form {...form}>
-        <form action={addFranchise} className=" flex flex-col space-y-8">
+        <form
+          onSubmit={form.handleSubmit(handleSubmit)}
+          className="flex flex-col space-y-8"
+        >
           <FormField
             control={form.control}
             name="LOCATION"
@@ -50,10 +79,7 @@ const CreateFranchiseForm: React.FC = () => {
                     {...field}
                   />
                 </FormControl>
-                <FormDescription>
-                  Location of the Franchise. The input will be displayed on the
-                  front page and mobile menu
-                </FormDescription>
+                <FormDescription>Location of the Franchise.</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -87,41 +113,22 @@ const CreateFranchiseForm: React.FC = () => {
                   <Input placeholder="https://www.google.com" {...field} />
                 </FormControl>
                 <FormDescription>
-                  A link towards the website of the new Franchise, not mandatory
+                  A link to the franchise website
                 </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
-          <FormField
-            control={form.control}
-            name="IMAGE"
-            render={({ field: { onChange, ...rest } }) => (
-              <FormItem>
-                <FormLabel>Location picture</FormLabel>
-                <FormControl>
-                  <Input
-                    type="file"
-                    accept="image/*"
-                    onChange={(e) => {
-                      const file = e.target.files?.[0];
-                      if (file) {
-                        const reader = new FileReader();
-                        reader.readAsDataURL(file); // Convert to Base64
-                        reader.onloadend = () => {
-                          form.setValue("IMAGE", reader.result as string); // Store Base64
-                        };
-                      }
-                    }}
-                  />
-                </FormControl>
-                <FormDescription>
-                  Image of the Franchise to be displayed on the main page
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <FormItem>
+            <FormLabel>Location picture</FormLabel>
+            <FormControl>
+              {/* //! svaki put kada se ucita novi fajl prolazi kroz handler
+              // !koji ga konvertuje u base64 string format */}
+              <Input type="file" accept="image/*" onChange={handleFileChange} />
+            </FormControl>
+            <FormDescription>Image of the Franchise.</FormDescription>
+            <FormMessage />
+          </FormItem>
           <Button className="w-32 bg-green-700" type="submit">
             Add Franchise
           </Button>

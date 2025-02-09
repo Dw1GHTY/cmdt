@@ -45,3 +45,15 @@ https://usamdt.com/ -> slicne informacije kao ovde
 https://completemobiledrugtesting.com/ -> tabovi/stranice + dynamic dropdown 
 
 https://www.robotlab.com/ -> RobotLAB Locations : ovaj deo je dosta bitan
+
+
+CONTENT:
+about us: completemobiledrugtesting.com
+drug testing: completemobiledrugtesting.com
+dna: completemobiledrugtesting.com
+background screening: completemobiledrugtesting.com
+capability statement: everything underneath "Comprehensive DOT & Non-DOT Drug Testing" and first three bullet points.
+
+contact us -> same as robot labs
+
+

@@ -9,7 +9,7 @@ import { TCompany } from "@/types/TCompany";
 
 const Navbar = () => {
   const { data, isLoading, isError } = useQuery({
-    refetchInterval: 30000,
+    refetchInterval: 120000,
     queryKey: ["companies"],
     queryFn: async () => {
       const url = `${window.location.origin}/api/companies`;
