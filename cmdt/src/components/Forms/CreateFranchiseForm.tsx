@@ -15,17 +15,11 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { addFranchise } from "@/lib/actions";
-
-const formSchema = z.object({
-  LOCATION: z.string().min(2).max(50),
-  DESCRIPTION: z.string().min(2).max(50),
-  LINK: z.string().min(2).max(50),
-  IMAGE: z.string().optional(),
-});
+import { franchiseSchema } from "@/lib/schemas";
 
 const CreateFranchiseForm: React.FC = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof franchiseSchema>>({
+    resolver: zodResolver(franchiseSchema),
     defaultValues: {
       LOCATION: "",
       DESCRIPTION: "",
@@ -47,7 +41,7 @@ const CreateFranchiseForm: React.FC = () => {
     }
   };
 
-  const handleSubmit = async (data: z.infer<typeof formSchema>) => {
+  const handleSubmit = async (data: z.infer<typeof franchiseSchema>) => {
     const formData = new FormData();
     formData.append("LOCATION", data.LOCATION);
     formData.append("DESCRIPTION", data.DESCRIPTION);

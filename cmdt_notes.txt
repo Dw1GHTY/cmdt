@@ -24,7 +24,7 @@ Data:
 - Entity:
 	location: string
 	description: string
-	link: string
+	link: string (same website, dynamic route)
 	image: <image?>
 	
 
@@ -32,7 +32,6 @@ Features:
 - a dynamic dropdown to add future franchises
 - franchise with a button that leads to franchise page which has a button
 that leads to a BIG FORM, this segment is after the basic information
-- NO searchBox
 - Social Media links
 - Contact us FORM almost exactly the same as usmdt
 
@@ -48,12 +47,14 @@ https://www.robotlab.com/ -> RobotLAB Locations : ovaj deo je dosta bitan
 
 
 CONTENT:
-about us: completemobiledrugtesting.com
-drug testing: completemobiledrugtesting.com
-dna: completemobiledrugtesting.com
-background screening: completemobiledrugtesting.com
-capability statement: everything underneath "Comprehensive DOT & Non-DOT Drug Testing" and first three bullet points.
+
 
 contact us -> same as robot labs
+capability statement: everything underneath "Comprehensive DOT & Non-DOT Drug Testing" and first three bullet points.
+
+about us: completemobiledrugtesting.com | DONE-> on home page
+drug testing: completemobiledrugtesting.com | DONE
+dna: completemobiledrugtesting.com | DONE
+background screening: completemobiledrugtesting.com | DONE
 
 

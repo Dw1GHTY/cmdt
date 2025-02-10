@@ -1,9 +1,9 @@
 import React from "react";
 
-//! Ako se naidje na NEWLINE u stringu, renderuje se <br />
 type TParagraph = {
-  title?: string;
-  text: string;
+  paragraphTitle?: string;
+  text?: string;
+  component?: React.ReactNode;
 };
 
 interface InfoArticleProps {
@@ -12,37 +12,27 @@ interface InfoArticleProps {
 }
 
 const InfoArticle: React.FC<InfoArticleProps> = (props) => {
-  const { paragraphs } = props;
+  const { paragraphs, title } = props;
   return (
-    <section
-      className="
-    flex flex-col w-full md:w-2/3 
-    font-sans
-    "
-    >
-      {paragraphs.map((paragraph, index) => {
-        return paragraph.title ? (
-          <>
-            <article
-              key={index}
-              className="flex flex-col items-center justify-center px-1"
-            >
-              <h3 className="text-3xl my-2 text-center font-semibold">
-                {paragraph.title}
+    <section className="flex flex-col w-full md:w-2/3 font-sans">
+      {title ? <h2 className="text-4xl text-center mb-2">{title}</h2> : <br />}
+      {paragraphs.map((paragraph, index) => (
+        <React.Fragment key={index}>
+          <article className="flex flex-col justify-center px-1">
+            {paragraph.paragraphTitle && (
+              <h3 className="text-2xl my-2  font-semibold">
+                {paragraph.paragraphTitle}
               </h3>
+            )}
+            {paragraph.component ? (
+              paragraph.component
+            ) : (
               <p className="text-xl">{paragraph.text}</p>
-            </article>
-            <br />
-          </>
-        ) : (
-          <>
-            <article key={index} className="px-1">
-              <p className="text-xl">{paragraph.text}</p>
-            </article>
-            <br />
-          </>
-        );
-      })}
+            )}
+          </article>
+          <br />
+        </React.Fragment>
+      ))}
     </section>
   );
 };
