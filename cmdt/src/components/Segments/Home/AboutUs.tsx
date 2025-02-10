@@ -5,9 +5,9 @@ const AboutUs = () => {
   return (
     <div className="flex flex-col justify-center items-center w-full my-1">
       <InfoArticle
+        title="About us"
         paragraphs={[
           {
-            title: "About us",
             text: "Your Premier Source for 24/7 Mobile Drug Testing, Background Checks, DNA/Paternity Testing and Fingerprinting[/fancyheading] Established in 2011, Complete Mobile Drug Testing has become a trusted provider of drug testing, pre-employment background screening and paternity testing for businesses, courts and families in Milwaukee, Wisconsin and surrounding areas.",
           },
           {

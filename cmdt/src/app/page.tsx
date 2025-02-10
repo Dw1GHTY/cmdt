@@ -1,7 +1,6 @@
 import HomeCarousel from "@/components/Carousels/HomeCarousel";
 import AboutUs from "@/components/Segments/Home/AboutUs";
 import Locations from "@/components/Segments/Home/Locations";
-import { Separator } from "@/components/ui/separator";
 import React from "react";
 const page = () => {
   return (
@@ -25,13 +24,7 @@ const page = () => {
 
       <AboutUs />
       {/* //? LOCATIONS SEGMENT */}
-      <Separator
-        className="
-      bg-blue-400 h-1 w-3/4 mt-6 rounded-md 
-      ring-1 ring-sky-400 
-      shadow-md shadow-cyan-300
-       animate-pulse"
-      />
+
       <Locations />
 
       {/* //?  */}

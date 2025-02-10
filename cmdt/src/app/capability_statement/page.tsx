@@ -1,10 +1,9 @@
-import BulletArticle from "@/components/Content/BulletArticle";
 import React from "react";
 
 const page = () => {
   return (
     <div className="w-full">
-      <section className="mt-28 text-black font-sans">
+      {/* <section className="mt-28 text-black font-sans">
         <BulletArticle
           menus={[
             { text: "Established 2011" },
@@ -25,16 +24,16 @@ const page = () => {
           menus={[
             {
               text: "Comprehensive DOT & Non-DOT Drug Testing",
-              submenu: [
+
                 { text: "Random" },
                 { text: "Pre-Employment" },
                 { text: "Post Accident" },
                 { text: "Reasonable Suspicion" },
-              ],
+
             },
           ]}
         />
-      </section>
+      </section> */}
     </div>
   );
 };

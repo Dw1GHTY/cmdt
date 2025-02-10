@@ -4,14 +4,11 @@ export interface ICompany {
   LOCATION: string;
   DESCRIPTION: string;
   LINK: string;
-  _id?: ObjectId;
+  IMAGE: string;
 }
 
 export interface ICompanyDocument extends ICompany, Document {
-    LOCATION: string;
-  DESCRIPTION: string;
-  LINK: string;
-  _id?: ObjectId;
+  _id: ObjectId; // MongoDB auto-generates this, so no need to make it required manually
 }
 
 const companySchema = new mongoose.Schema<ICompanyDocument>(
@@ -28,17 +25,17 @@ const companySchema = new mongoose.Schema<ICompanyDocument>(
       type: String,
       required: true,
     },
-    _id: {
-      type: mongoose.Schema.Types.ObjectId,
+    IMAGE: {
+      type: String,
       required: true,
     },
   },
   {
-    timestamps: false,
+    timestamps: true, // Adds `createdAt` and `updatedAt` fields
   }
 );
 
 const Company: Model<ICompanyDocument> =
-  mongoose.models?.Company|| mongoose.model("Company", companySchema);
+  mongoose.models?.Company || mongoose.model("Company", companySchema);
 
 export default Company;

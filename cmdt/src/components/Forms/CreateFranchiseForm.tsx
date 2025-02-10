@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -14,31 +14,52 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { addFranchise } from "@/lib/actions";
+import { franchiseSchema } from "@/lib/schemas";
 
-const formSchema = z.object({
-  LOCATION: z.string().min(2).max(50),
-  DESCRIPTION: z.string().min(2).max(50),
-  LINK: z.string().min(2).max(50),
-});
-
-const CreateCompanyForm: React.FC = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+const CreateFranchiseForm: React.FC = () => {
+  const form = useForm<z.infer<typeof franchiseSchema>>({
+    resolver: zodResolver(franchiseSchema),
     defaultValues: {
       LOCATION: "",
       DESCRIPTION: "",
       LINK: "",
+      IMAGE: "",
     },
   });
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-  }
+
+  const [base64Image, setBase64Image] = useState<string | null>(null);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file); // Convert to Base64
+      reader.onloadend = () => {
+        setBase64Image(reader.result as string); // Store Base64
+      };
+    }
+  };
+
+  const handleSubmit = async (data: z.infer<typeof franchiseSchema>) => {
+    const formData = new FormData();
+    formData.append("LOCATION", data.LOCATION);
+    formData.append("DESCRIPTION", data.DESCRIPTION);
+    formData.append("LINK", data.LINK);
+
+    if (base64Image) {
+      formData.append("IMAGE", base64Image);
+    }
+
+    await addFranchise(formData);
+  };
+
   return (
     <div className="flex size-fit rounded-md">
       <Form {...form}>
         <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className=" flex flex-col space-y-8"
+          onSubmit={form.handleSubmit(handleSubmit)}
+          className="flex flex-col space-y-8"
         >
           <FormField
             control={form.control}
@@ -52,10 +73,7 @@ const CreateCompanyForm: React.FC = () => {
                     {...field}
                   />
                 </FormControl>
-                <FormDescription>
-                  Location of the Franchise. The input will be displayed on the
-                  front page and mobile menu
-                </FormDescription>
+                <FormDescription>Location of the Franchise.</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -84,17 +102,27 @@ const CreateCompanyForm: React.FC = () => {
             name="LINK"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Username</FormLabel>
+                <FormLabel>Franchise Link</FormLabel>
                 <FormControl>
                   <Input placeholder="https://www.google.com" {...field} />
                 </FormControl>
                 <FormDescription>
-                  A link towards the website of the new Franchise, not mandatory
+                  A link to the franchise website
                 </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
+          <FormItem>
+            <FormLabel>Location picture</FormLabel>
+            <FormControl>
+              {/* //! svaki put kada se ucita novi fajl prolazi kroz handler
+              // !koji ga konvertuje u base64 string format */}
+              <Input type="file" accept="image/*" onChange={handleFileChange} />
+            </FormControl>
+            <FormDescription>Image of the Franchise.</FormDescription>
+            <FormMessage />
+          </FormItem>
           <Button className="w-32 bg-green-700" type="submit">
             Add Franchise
           </Button>
@@ -104,4 +132,4 @@ const CreateCompanyForm: React.FC = () => {
   );
 };
 
-export default CreateCompanyForm;
+export default CreateFranchiseForm;
