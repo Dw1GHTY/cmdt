@@ -1,13 +1,17 @@
 import BulletArticle from "@/components/Content/BulletArticle";
 import InfoArticle from "@/components/Content/InfoArticle";
-import { Separator } from "@/components/ui/separator";
+import PageTitlePicture from "@/components/Content/PageTitlePicture";
 import React from "react";
 
 const page = () => {
   return (
     <div className="flex flex-col justify-center items-center bg-white size-full">
-      {/* //! Big image instead of Separator tag */}
-      <Separator className="mt-28 h-2" />
+      <PageTitlePicture
+        imagePath="/dna-test.jpg"
+        imageAlt="A picture of a woman looking through a microscope"
+        title="DNA Paternity Testing"
+        description="A definitive proof of a biological relationship"
+      />
       <InfoArticle
         title="DNA & Paternity Testing"
         paragraphs={[

@@ -1,39 +1,88 @@
+import ContentCard from "@/components/Cards/ContentCard";
+import BulletArticle from "@/components/Content/BulletArticle";
 import React from "react";
 
 const page = () => {
   return (
-    <div className="w-full">
-      {/* <section className="mt-28 text-black font-sans">
-        <BulletArticle
-          menus={[
-            { text: "Established 2011" },
-            { text: "CWOB: Certified Women Owned Business" },
-            { text: "Member of DATIA: Drug & Alcohol Testing Association" },
-          ]}
-        />
-        <BulletArticle
-          menus={[
-            { text: "DUNS: 968800016" },
-            { text: "Cage: 6K7D1" },
-            {
-              text: "NAICS CODES: 541380, 541611, 621511, 541990, 624999, 621999",
-            },
-          ]}
-        />
-        <BulletArticle
-          menus={[
-            {
-              text: "Comprehensive DOT & Non-DOT Drug Testing",
-
-                { text: "Random" },
-                { text: "Pre-Employment" },
-                { text: "Post Accident" },
-                { text: "Reasonable Suspicion" },
-
-            },
-          ]}
-        />
-      </section> */}
+    <div className="flex flex-col justify-center items-center bg-white size-full">
+      <section className="grid grid-cols-2 grid-rows-4 items-center  mt-28">
+        <ContentCard cardTitle="Certifications">
+          <BulletArticle
+            menus={[
+              { text: "Established 2011" },
+              { text: "CWOB: Certified Women Owned Business" },
+              { text: "Member of DATIA: Drug & Alcohol Testing Association" },
+            ]}
+          />
+        </ContentCard>
+        <ContentCard cardTitle="Testing">
+          <BulletArticle
+            menus={[
+              { text: "Hair Follicle Testing" },
+              { text: "Breath Alcohol Testing" },
+              { text: "DNA Testing" },
+              { text: "Saliva Testing" },
+              { text: "Breath Alcohol Testing" },
+              { text: "Fingerprinting" },
+              { text: "Steroid Testing" },
+              { text: "Consortium Management" },
+            ]}
+          />
+        </ContentCard>
+        <ContentCard cardTitle="Background Searches">
+          <BulletArticle
+            menus={[
+              { text: "Credit Report" },
+              { text: "Criminal History" },
+              { text: "State and County Search" },
+              { text: "Federal Criminal Records Search" },
+              { text: "International Criminal Records" },
+              { text: "Sexual Offender (Nationwide)" },
+              { text: "Social Security Number (SSN) Verification" },
+              { text: "Address Trace" },
+              { text: "Tribal Search" },
+              { text: "Driving History" },
+              { text: "Professional License" },
+            ]}
+          />
+        </ContentCard>
+        <ContentCard cardTitle="Partners">
+          <BulletArticle
+            menus={[
+              { text: "Wal-Mart" },
+              { text: "GE Health Care" },
+              { text: "UPS" },
+              { text: "Miller Park" },
+              { text: "Menards" },
+              { text: "Johnson Controls" },
+              { text: "US Coast Guards" },
+              { text: "American Eagle Airlines" },
+              { text: "Froedert Medical Systems" },
+              { text: "US Cellular" },
+              { text: "Office Max" },
+              { text: "ALDI" },
+              { text: "Coach Bus Line" },
+            ]}
+          />
+        </ContentCard>
+        <ContentCard cardTitle="We...">
+          <BulletArticle
+            menus={[
+              { text: "Offer Mobile Testing 24/7" },
+              { text: "Online and Paperless Chain of Custody" },
+              {
+                text: "Streamlined Collection Process (Paper and Electronic Format)",
+              },
+            ]}
+          />
+          <BulletArticle
+            menus={[
+              { text: "24/7 Web-Based Data Entry Access" },
+              { text: "Accessible Through Any Wi-Fi Device" },
+            ]}
+          />
+        </ContentCard>
+      </section>
     </div>
   );
 };
