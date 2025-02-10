@@ -1,5 +1,6 @@
 import BulletArticle from "@/components/Content/BulletArticle";
 import InfoArticle from "@/components/Content/InfoArticle";
+import PageTitlePicture from "@/components/Content/PageTitlePicture";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import React from "react";
@@ -7,8 +8,13 @@ import React from "react";
 const page = () => {
   return (
     <div className="flex flex-col justify-center items-center bg-white size-full">
-      {/* //! Big image instead of Separator tag */}
-      <Separator className="mt-28 h-2" />
+      <PageTitlePicture
+        imagePath="/drug-test.jpg"
+        imageAlt="An image of a drug test"
+        title="Drug Testing"
+        description="Drug testing programs for all"
+      />
+
       <InfoArticle
         title="DOT & Non-DOT Drug Testing"
         paragraphs={[
@@ -49,7 +55,7 @@ const page = () => {
           },
         ]}
       />
-
+      <Separator className="w-2/3 h-1 mb-4 hover:ring-2 bg-blue-300 rounded-lg" />
       {/* //? QnA Section */}
       <InfoArticle
         title="FAQs from U.S. Dept of Transportation"

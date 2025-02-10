@@ -48,9 +48,8 @@ https://www.robotlab.com/ -> RobotLAB Locations : ovaj deo je dosta bitan
 
 CONTENT:
 
-
 contact us -> same as robot labs
-capability statement: everything underneath "Comprehensive DOT & Non-DOT Drug Testing" and first three bullet points.
+capability statement: first three bullet points and everything underneath "Comprehensive DOT & Non-DOT Drug Testing".
 
 about us: completemobiledrugtesting.com | DONE-> on home page
 drug testing: completemobiledrugtesting.com | DONE

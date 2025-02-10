@@ -29,7 +29,7 @@ export default function RootLayout({
   connectToMongoDB();
   //! useQuery ce koristiti pojedinacno Navbar, NavMenuMobile i Home Page
   return (
-    <html lang="en">
+    <html lang="en" className="">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased 
         flex flex-col min-h-screen w-screen
