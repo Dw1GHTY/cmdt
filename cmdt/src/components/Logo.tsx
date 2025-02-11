@@ -7,9 +7,12 @@ import { useRouter } from "next/navigation";
 const Logo = () => {
   const router = useRouter();
   return (
-    <div className="flex mx-1 py-2 justify-center md:justify-normal items-center md:mt-0 h-full rounded-md">
+    <div
+      className="
+    flex mx-1 py-2 justify-center md:justify-normal items-center md:mt-0 h-full rounded-md"
+    >
       <Image
-        className="cursor-pointer rounded-md"
+        className="cursor-pointer rounded-md hover:ring-2 ring-blue-300"
         onClick={() => {
           router.push("/");
         }}
