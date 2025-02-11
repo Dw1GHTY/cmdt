@@ -11,13 +11,24 @@ const page = () => {
       <HomeCarousel
         slides={[
           {
-            imagePath: "/stock1.jpg",
+            imagePath: "/drug-test.jpg",
+            imageAlt: "An image of a drug test",
+            title: "Drug Testing",
+            caption: "Efficient drug testing",
+            linkPath: "drug_testing",
           },
           {
-            imagePath: "/stock2.jpg",
+            imagePath: "/dna-test.jpg",
+            imageAlt: "An image of a dna test",
+            title: "DNA paternity testing",
+            linkPath: "dna_paternity_testing",
           },
           {
-            imagePath: "/stock3.jpg",
+            imagePath: "/background-screening.jpg",
+            imageAlt: "An image of a screening process",
+            title: "Background Screening",
+            caption: "Pre employment background screening and more",
+            linkPath: "/background_screening",
           },
         ]}
       />
