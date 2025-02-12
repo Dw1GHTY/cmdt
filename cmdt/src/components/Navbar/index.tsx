@@ -3,31 +3,30 @@ import React from "react";
 import Logo from "../Logo";
 import NavMenuDesktop from "./NavMenuDesktop";
 import NavMenuMobile from "./NavMenuMobile";
+import NavFranchises from "./NavFranchises";
 import { useQuery } from "@tanstack/react-query";
-import NavbarSekeleton from "../Skeletons/NavbarSekeleton";
-import { TCompany } from "@/types/TCompany";
+import { TFranchise } from "@/types/TFranchise";
+import { Button } from "../ui/button";
 
 const Navbar = () => {
   const { data, isLoading, isError } = useQuery({
     refetchOnWindowFocus: false,
     refetchIntervalInBackground: false,
     refetchInterval: false,
-    queryKey: ["companies"],
+    queryKey: ["franchises"],
     queryFn: async () => {
-      const url = `${window.location.origin}/api/companies`;
+      const url = `${window.location.origin}/api/franchises`;
       const response = await fetch(url, { method: "GET" });
       const data = await response.json();
       return await data;
     },
   });
-  if (isLoading) return <NavbarSekeleton />;
   if (isError)
     return <span className="text-red-600">Sorry There was an Error</span>;
 
-  //! Generated submenu for NavMenuMobile
-  const franchiseSubmenu = data?.map((company: TCompany) => ({
-    name: company.LOCATION,
-    path: company.LINK,
+  const franchiseSubmenu = data?.map((franchise: TFranchise) => ({
+    name: franchise.LOCATION,
+    path: franchise.LINK,
   }));
   return (
     <nav
@@ -37,14 +36,20 @@ const Navbar = () => {
                 bg-gradient-to-r from-blue-700 to-slate-400
                 backdrop-filter backdrop-blur-lg bg-opacity-5"
     >
-      {/* //? Logo */}
       <Logo />
 
-      {/* //? Navbar menu with links */}
+      {/* //TODO: OVDE SI STAO */}
       <div className="hidden md:flex">
+        {isLoading ? (
+          <Button className="bg-white text-black mt-0.5 mx-1" disabled>
+            Franchises
+          </Button>
+        ) : (
+          <NavFranchises franchises={data} />
+        )}
+
         <NavMenuDesktop
           //!Pass fetched data from DB
-          companies={data}
           links={[
             {
               name: "Home",
@@ -74,40 +79,24 @@ const Navbar = () => {
         />
       </div>
 
-      {/* //? Mobile burger menu */}
       <div className="md:hidden flex justify-center size-20 p-2">
         <NavMenuMobile
-          //!Pass fetched data from db
           links={[
-            {
-              name: "Home",
-              path: "/",
-            },
+            { name: "Home", path: "/" },
             {
               name: "Franchises",
-              submenu: franchiseSubmenu,
+              submenu: {
+                links: franchiseSubmenu || [],
+                isDynamic: true, // Mark as dynamic
+              },
             },
-            {
-              name: "Capability Statement",
-              path: "/capability_statement",
-            },
-            {
-              name: "Drug Testing",
-              path: "/drug_testing",
-            },
-            {
-              name: "Background Screening",
-              path: "/background_screening",
-            },
-            {
-              name: "DNA/Paternity Testing",
-              path: "/dna_paternity_testing",
-            },
-            {
-              name: "Contact Us",
-              path: "/contact",
-            },
+            { name: "Capability Statement", path: "/capability_statement" },
+            { name: "Drug Testing", path: "/drug_testing" },
+            { name: "Background Screening", path: "/background_screening" },
+            { name: "DNA/Paternity Testing", path: "/dna_paternity_testing" },
+            { name: "Contact Us", path: "/contact" },
           ]}
+          isLoading={isLoading} // Pass isLoading state
         />
       </div>
     </nav>

@@ -9,7 +9,7 @@ interface ContentCardProps {
 const ContentCard: React.FC<ContentCardProps> = (props) => {
   const { cardTitle, children } = props;
   return (
-    <Card className="flex flex-col items-center size-fit my-2 mx-1 md:mx-2 text-wrap">
+    <Card className="flex flex-col items-center h-fit w-2/3 m-2 bg-white rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border border-gray-100">
       {cardTitle ? (
         <CardHeader>
           <CardTitle>{cardTitle}</CardTitle>

@@ -1,17 +1,17 @@
 import mongoose, { Model, ObjectId } from "mongoose";
 
-export interface ICompany {
+export interface IFranchise {
   LOCATION: string;
   DESCRIPTION: string;
   LINK: string;
   IMAGE: string;
 }
 
-export interface ICompanyDocument extends ICompany, Document {
+export interface IFranchiseDocument extends IFranchise, Document {
   _id: ObjectId; // MongoDB auto-generates this, so no need to make it required manually
 }
 
-const companySchema = new mongoose.Schema<ICompanyDocument>(
+const franchiseSchema = new mongoose.Schema<IFranchiseDocument>(
   {
     LOCATION: {
       type: String,
@@ -35,7 +35,7 @@ const companySchema = new mongoose.Schema<ICompanyDocument>(
   }
 );
 
-const Company: Model<ICompanyDocument> =
-  mongoose.models?.Company || mongoose.model("Company", companySchema);
+const Franchise: Model<IFranchiseDocument> =
+  mongoose.models?.Franchise || mongoose.model("Franchise", franchiseSchema);
 
-export default Company;
+export default Franchise;

@@ -4,8 +4,12 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="flex flex-col justify-center items-center bg-white size-full">
-      <section className="grid grid-cols-2 grid-rows-4 items-center  mt-28">
+    <div className="flex justify-center items-center bg-gradient-to-r from-cyan-200 via-blue-800 to-white size-full">
+      <section
+        className="
+      flex flex-row justify-center items-center flex-wrap
+      w-full md:w-2/3 border-x-2 border-dotted border-white mt-28"
+      >
         <ContentCard cardTitle="Certifications">
           <BulletArticle
             menus={[
