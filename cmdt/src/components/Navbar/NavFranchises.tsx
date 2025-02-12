@@ -8,21 +8,22 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "../ui/navigation-menu";
-import { TCompany } from "@/types/TCompany";
+import { TFranchise } from "@/types/TFranchise";
 
 interface NavFranchisesProps {
-  companies: Array<TCompany>;
+  franchises: Array<TFranchise>;
 }
 
-const NavFranchises: React.FC<NavFranchisesProps> = ({ companies }) => {
+const NavFranchises: React.FC<NavFranchisesProps> = (props) => {
+  const { franchises } = props;
   return (
-    <NavigationMenu className="mx-1 ">
+    <NavigationMenu className="mx-1">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Franchises</NavigationMenuTrigger>
           <NavigationMenuContent className="flex flex-row size-fit ">
-            {companies.map((company: TCompany, index: number) => {
-              return <FranchiseCardNav companyInfo={company} key={index} />;
+            {franchises.map((franchise: TFranchise, index: number) => {
+              return <FranchiseCardNav franchise={franchise} key={index} />;
             })}
           </NavigationMenuContent>
         </NavigationMenuItem>

@@ -4,37 +4,34 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { useRouter } from "next/navigation";
-import { TCompany } from "@/types/TCompany";
+import { TFranchise } from "@/types/TFranchise";
 
 interface FranchiseCardProps {
-  companyInfo: TCompany;
+  franchise: TFranchise;
 }
 
-const FranchiseCardNav: React.FC<FranchiseCardProps> = ({ companyInfo }) => {
+const FranchiseCardNav: React.FC<FranchiseCardProps> = (props) => {
+  const { franchise } = props;
   const router = useRouter();
   return (
     <div
-      className="flex size-fit m-1"
+      className="flex size-fit m-1 p-2"
       onClick={() => {
-        router.push(`${companyInfo.LINK}`);
+        router.push(`${franchise.LINK}`);
       }}
     >
-      <Card className="w-fit transition delay-75 bg-slate-200 hover:bg-slate-400 cursor-pointer">
+      <Card className="w-44 transition delay-75 bg-white hover:bg-blue-200 cursor-pointer">
         <CardHeader>
-          <CardTitle>{companyInfo.LOCATION}</CardTitle>
-          <CardDescription>{companyInfo.DESCRIPTION}</CardDescription>
+          <CardTitle>{franchise.LOCATION}</CardTitle>
+          <CardDescription>{franchise.DESCRIPTION}</CardDescription>
         </CardHeader>
         <CardContent>
           <p>Card Content</p>
         </CardContent>
-        <CardFooter>
-          <p>Card Footer</p>
-        </CardFooter>
       </Card>
     </div>
   );

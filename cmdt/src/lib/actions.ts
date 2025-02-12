@@ -1,6 +1,6 @@
 "use server";
 
-import Company from "@/models/companyModel";
+import Franchise from "@/models/franchiseModel";
 import { connectToMongoDB } from "../../db_services/db";
 
 export const addFranchise = async (formData: FormData) => {
@@ -16,7 +16,7 @@ export const addFranchise = async (formData: FormData) => {
   console.log("addFranchise INVOKED, data:\n", franchise);
 
   try {
-    const newFranchise = new Company(franchise);
+    const newFranchise = new Franchise(franchise);
     await newFranchise.save();
     console.log("Franchise added successfully!");
 

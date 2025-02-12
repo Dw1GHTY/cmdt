@@ -2,13 +2,13 @@
 import React from "react";
 import FranchiseCard from "@/components/Cards/FranchiseCard";
 import { useQuery } from "@tanstack/react-query";
-import { TCompany } from "@/types/TCompany";
+import { TFranchise } from "@/types/TFranchise";
 
 const Locations: React.FC = () => {
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["companies"],
+    queryKey: ["franchises"],
     queryFn: async () => {
-      const url = `${window.location.origin}/api/companies`;
+      const url = `${window.location.origin}/api/franchises`;
       const response = await fetch(url, { method: "GET" });
       const data = await response.json();
       return await data;
@@ -18,7 +18,7 @@ const Locations: React.FC = () => {
   if (isError)
     return <span className="text-white">Sorry There was an Error</span>;
   return (
-    <div className="flex w-full bg-blue-950 shadow-md shadow-sky-300 my-6">
+    <div className="flex w-full bg-blue-950 shadow-md shadow-sky-300 my-6 font-sans">
       <section className="flex flex-col w-full">
         <h1 className="text-4xl text-center text-white my-2">
           Complete Mobile Drug Testing
@@ -27,9 +27,9 @@ const Locations: React.FC = () => {
           Locations
         </span>
         <div className="flex flex-row justify-center items-center flex-wrap md:flex-row w-full">
-          {/* //! Fetched companies here */}
-          {data.map((company: TCompany, index: number) => {
-            return <FranchiseCard key={index} />;
+          {/* //! Fetched franchises here */}
+          {data.map((franchise: TFranchise, index: number) => {
+            return <FranchiseCard key={index} franchise={franchise} />;
           })}
         </div>
       </section>

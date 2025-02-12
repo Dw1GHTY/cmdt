@@ -34,12 +34,8 @@ const page = () => {
       />
 
       <AboutUs />
-      {/* //? LOCATIONS SEGMENT */}
 
       <Locations />
-
-      {/* //?  */}
-      <div className="flex text-4xl">Segment 4</div>
     </div>
   );
 };

@@ -24,10 +24,10 @@ const BasicDialog: React.FC<BasicDialogProps> = ({ children, triggerName }) => {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Add a Company to Franchises</DialogTitle>
+          <DialogTitle>Add a Franchise</DialogTitle>
           <DialogDescription>
-            By adding a Company to the list of Franchises it will become visible{" "}
-            <br />
+            By adding a Franchise to the list of Franchises it will become
+            visible <br />
             on the home page and mobile menu
           </DialogDescription>
         </DialogHeader>
