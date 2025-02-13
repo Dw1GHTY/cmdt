@@ -17,6 +17,30 @@ import { Input } from "@/components/ui/input";
 import { contactUsSchema } from "@/lib/schemas";
 import { Textarea } from "../ui/textarea";
 
+async function sendEmail(data: z.infer<typeof contactUsSchema>) {
+  console.log(`sendEmail invoked: ${data}`);
+  fetch("https://cmdt.vercel.app/api/email/contact", {
+    method: "POST",
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((response) => {
+      alert(response.message);
+    })
+    .catch((err) => {
+      alert(err);
+      console.log(err);
+    });
+}
+async function onSubmit(values: z.infer<typeof contactUsSchema>) {
+  console.log(values);
+  try {
+    await sendEmail(values);
+  } catch (err) {
+    alert(`Error sending email!, error:\n  ${err}`);
+  } finally {
+  }
+}
 const ContactUsForm = () => {
   const form = useForm<z.infer<typeof contactUsSchema>>({
     resolver: zodResolver(contactUsSchema),
@@ -31,29 +55,7 @@ const ContactUsForm = () => {
       additionalMessage: "",
     },
   });
-  async function sendEmail(data: z.infer<typeof contactUsSchema>) {
-    fetch("https://cmdt.vercel.app/api/email/contact", {
-      method: "POST",
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((response) => {
-        alert(response.message);
-      })
-      .catch((err) => {
-        alert(err);
-        console.log(err);
-      });
-  }
-  async function onSubmit(values: z.infer<typeof contactUsSchema>) {
-    console.log(values);
-    try {
-      await sendEmail(values);
-    } catch (err) {
-      alert(`Error sending email!, error: ${err}`);
-    } finally {
-    }
-  }
+
   return (
     <div
       className="flex border-2 py-2 px-3 size-fit  

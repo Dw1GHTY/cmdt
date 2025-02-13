@@ -14,6 +14,8 @@ export async function POST(request: NextRequest) {
     message,
   } = await request.json();
 
+  const test = await request.json();
+  console.log(test);
   const mailOptions: Mail.Options = {
     from: process.env.COMPANY_EMAIL,
     to: process.env.COMPANY_EMAIL,
