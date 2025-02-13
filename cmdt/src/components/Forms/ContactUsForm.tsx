@@ -32,7 +32,7 @@ const ContactUsForm = () => {
     },
   });
   async function sendEmail(data: z.infer<typeof contactUsSchema>) {
-    fetch("https://cmh-test.vercel.app/api/email/contact", {
+    fetch("https://cmdt.vercel.app/api/email/contact", {
       method: "POST",
       body: JSON.stringify(data),
     })
