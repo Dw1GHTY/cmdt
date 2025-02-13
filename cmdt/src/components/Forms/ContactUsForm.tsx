@@ -33,7 +33,7 @@ async function sendEmail(data: z.infer<typeof contactUsSchema>) {
     });
 }
 async function onSubmit(values: z.infer<typeof contactUsSchema>) {
-  console.log(values);
+  console.log(`onSubmit in client: ${values}`);
   try {
     await sendEmail(values);
   } catch (err) {

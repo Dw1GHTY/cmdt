@@ -3,6 +3,9 @@ import { transport } from "@/lib/nodemailer";
 import Mail from "nodemailer/lib/mailer";
 
 export async function POST(request: NextRequest) {
+  const requestBody = await request.json();
+  console.log("email api route data:", requestBody);
+
   const {
     firstName,
     lastName,
@@ -11,11 +14,8 @@ export async function POST(request: NextRequest) {
     phoneNumber,
     specificProduct,
     industry,
-    message,
-  } = await request.json();
-
-  const test = await request.json();
-  console.log(test);
+    additionalMessage, // Fix the name
+  } = requestBody;
   const mailOptions: Mail.Options = {
     from: process.env.COMPANY_EMAIL,
     to: process.env.COMPANY_EMAIL,
@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
             <p><strong>PHONE NUMBER:</strong> ${phoneNumber}</p>
             <p><strong>SPECIFIC PRODUCT:</strong> ${specificProduct}</p>
             <p><strong>INDUSTRY:</strong> ${industry}</p>
-            <p><strong>ADDITIONAL MESSAGE:</strong> ${message}</p>   
+            <p><strong>ADDITIONAL MESSAGE:</strong> ${additionalMessage}</p>   
         </div>
     `,
   };
