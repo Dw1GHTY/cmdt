@@ -7,7 +7,7 @@ const page = () => {
     <div className="flex size-full justify-center items-center bg-white">
       <div className="flex  size-fit mt-28">
         <FormCard
-          title="Contact Us Form"
+          title="Contact Us"
           footer="After submiting we will get back at you as soon as possible!"
         >
           <ContactUsForm />
