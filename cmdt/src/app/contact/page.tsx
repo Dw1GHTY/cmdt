@@ -8,7 +8,7 @@ const page = () => {
       <div className="flex  size-fit mt-28">
         <FormCard
           title="Contact Us"
-          footer="After submiting we will get back at you as soon as possible!"
+          footer="After submiting we will get back to you as soon as possible!"
         >
           <ContactUsForm />
         </FormCard>

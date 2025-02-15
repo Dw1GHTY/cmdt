@@ -2,7 +2,6 @@
 import React from "react";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
@@ -29,9 +28,6 @@ const FranchiseCardNav: React.FC<FranchiseCardProps> = (props) => {
           <CardTitle>{franchise.LOCATION}</CardTitle>
           <CardDescription>{franchise.DESCRIPTION}</CardDescription>
         </CardHeader>
-        <CardContent>
-          <p>Card Content</p>
-        </CardContent>
       </Card>
     </div>
   );

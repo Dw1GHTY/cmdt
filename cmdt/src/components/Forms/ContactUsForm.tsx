@@ -59,7 +59,7 @@ const ContactUsForm = () => {
   return (
     <div
       className="flex border-2 py-2 px-3 size-fit  
-    bg-white border-blue-500 rounded-md shadow-lg shadow-blue-400"
+    bg-slate-100 border-blue-500 rounded-md shadow-lg shadow-blue-400"
     >
       <Form {...form}>
         <form className="flex flex-col" onSubmit={form.handleSubmit(onSubmit)}>
@@ -189,7 +189,7 @@ const ContactUsForm = () => {
           </div>
           {/* button */}
           <div className="flex justify-center items-center w-full my-2">
-            <Button type="submit" className="flex bg-green-400 w-full md:w-1/3">
+            <Button type="submit" className="flex bg-green-700 w-full md:w-1/3">
               Submit
             </Button>
           </div>

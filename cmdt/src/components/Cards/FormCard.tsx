@@ -19,7 +19,7 @@ const FormCard: React.FC<FormCardProps> = (props) => {
   const { title, description, footer, children } = props;
   return (
     <div className="mt-2 mb-6">
-      <Card className="flex flex-col size-fit bg-blue-600">
+      <Card className="flex flex-col size-fit bg-blue-900">
         <CardHeader>
           <CardTitle className="text-center text-6xl text-white font-sans">
             {title}

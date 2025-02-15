@@ -13,7 +13,12 @@ interface FranchiseCardProps {
 const FranchiseCard: React.FC<FranchiseCardProps> = (props) => {
   const { franchise } = props;
   return (
-    <Card className="w-full max-w-sm overflow-hidden bg-slate-200 rounded-lg">
+    <Card
+      className="w-full 
+    border-none
+    max-w-sm overflow-hidden bg-white-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 
+    hover:ring-2 ring-blue-300 hover:shadow-lg shadow-blue-900 cursor-pointer"
+    >
       {/* Image with overlay */}
       <div className="relative w-full">
         <Image
@@ -30,13 +35,13 @@ const FranchiseCard: React.FC<FranchiseCardProps> = (props) => {
       </div>
 
       {/* Description & Footer */}
-      <CardContent className="p-4">
+      <CardContent className="p-4 text-white text-xl outline font-semibold">
         <p>{franchise.DESCRIPTION}</p>
       </CardContent>
       <CardFooter className="p-4">
         <Link
           href={franchise.LINK}
-          className="text-white transition delay-75 bg-blue-600 p-2 rounded-md hover:ring-1 ring-blue-900"
+          className="text-white transition delay-75 bg-blue-600 p-2 rounded-md hover:bg-blue-300"
         >
           Learn More
         </Link>

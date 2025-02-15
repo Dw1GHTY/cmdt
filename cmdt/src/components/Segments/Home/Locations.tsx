@@ -36,8 +36,8 @@ const Locations: React.FC = () => {
           <h2
             className="
             flex flex-col p-2
-            text-4xl text-center text-slate-500
-            bg-white-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-5 border border-white"
+            text-4xl text-center text-blue-900
+            bg-white-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-5 "
           >
             <span className=" font-semibold">Complete Mobile Drug Testing</span>
             <span className="text-center text-3xl md:text-6xl font-bold italic">
@@ -46,9 +46,9 @@ const Locations: React.FC = () => {
           </h2>
         </div>
         <div
-          className="flex justify-center items-center w-full mb-2
+          className="flex justify-center items-center w-full mb-2 px-9
           flex-col space-x-0 space-y-2  
-          md:flex-row md:space-x-3 md:space-y-0"
+          md:flex-row md:space-x-9 md:space-y-0"
         >
           {isLoading ? (
             <LocationsSkeleton />
