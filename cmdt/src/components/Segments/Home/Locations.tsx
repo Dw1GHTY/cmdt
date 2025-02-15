@@ -3,6 +3,7 @@ import React from "react";
 import FranchiseCard from "@/components/Cards/FranchiseCard";
 import { useQuery } from "@tanstack/react-query";
 import { TFranchise } from "@/types/TFranchise";
+import LocationsSkeleton from "@/components/Skeletons/LocationsSkeleton";
 
 const Locations: React.FC = () => {
   const { data, isLoading, isError } = useQuery({
@@ -14,23 +15,48 @@ const Locations: React.FC = () => {
       return await data;
     },
   });
-  if (isLoading) return <span className="text-white">Loading locations</span>;
   if (isError)
-    return <span className="text-white">Sorry There was an Error</span>;
+    return (
+      <span className="text-red">
+        Sorry There was an Error while loading locations
+      </span>
+    );
   return (
-    <div className="flex w-full bg-blue-950 shadow-md shadow-sky-300 my-6 font-sans">
+    <div
+      className="
+      flex w-full my-6 font-sans
+      border-y-2
+      bg-cover bg-center bg-no-repeat relative"
+      style={{
+        backgroundImage: "url('/locations-bg.jpg')",
+      }}
+    >
       <section className="flex flex-col w-full">
-        <h1 className="text-4xl text-center text-white my-2">
-          Complete Mobile Drug Testing
-        </h1>
-        <span className="text-white text-center text-6xl font-bold">
-          Locations
-        </span>
-        <div className="flex flex-col justify-center items-center md:flex-row w-full">
-          {/* //! Fetched franchises here */}
-          {data.map((franchise: TFranchise, index: number) => {
-            return <FranchiseCard key={index} franchise={franchise} />;
-          })}
+        <div className="flex justify-center items-center my-3 ">
+          <h2
+            className="
+            flex flex-col p-2
+            text-4xl text-center text-slate-500
+            bg-white-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-5 border border-white"
+          >
+            <span className=" font-semibold">Complete Mobile Drug Testing</span>
+            <span className="text-center text-3xl md:text-6xl font-bold italic">
+              Locations
+            </span>
+          </h2>
+        </div>
+        <div
+          className="flex justify-center items-center w-full mb-2
+          flex-col space-x-0 space-y-2  
+          md:flex-row md:space-x-3 md:space-y-0"
+        >
+          {isLoading ? (
+            <LocationsSkeleton />
+          ) : (
+            data.map((franchise: TFranchise, index: number) => {
+              return <FranchiseCard key={index} franchise={franchise} />;
+            })
+          )}
         </div>
       </section>
     </div>
