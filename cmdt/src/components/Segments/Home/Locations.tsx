@@ -26,7 +26,7 @@ const Locations: React.FC = () => {
         <span className="text-white text-center text-6xl font-bold">
           Locations
         </span>
-        <div className="flex flex-row justify-center items-center flex-wrap md:flex-row w-full">
+        <div className="flex flex-col justify-center items-center md:flex-row w-full">
           {/* //! Fetched franchises here */}
           {data.map((franchise: TFranchise, index: number) => {
             return <FranchiseCard key={index} franchise={franchise} />;

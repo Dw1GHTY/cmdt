@@ -20,11 +20,19 @@ interface FranchiseCardProps {
 const FranchiseCard: React.FC<FranchiseCardProps> = (props) => {
   const { franchise } = props;
   return (
-    <Card className="flex flex-col justify-center items-center w-72 my-2 mx-1 md:mx-2">
+    <Card className="flex flex-col justify-center items-center w-fit my-2 mx-1 md:mx-2">
       <CardHeader>
-        <CardTitle>{franchise.LOCATION}</CardTitle>
-        <CardDescription>
-          <Image alt="test" src="/city1.jpg" width={100} height={100} />
+        <CardTitle className="text-center font-sans text-4xl">
+          {franchise.LOCATION}
+        </CardTitle>
+        <CardDescription className="flex justify-center items-center">
+          <Image
+            className="rounded-md"
+            alt="test"
+            src="/city1.jpg"
+            width={300}
+            height={100}
+          />
         </CardDescription>
       </CardHeader>
       <CardContent>
