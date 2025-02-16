@@ -59,7 +59,7 @@ const ContactUsForm = () => {
   return (
     <div
       className="flex border-2 py-2 px-3 size-fit  
-    bg-slate-100 border-blue-500 rounded-md shadow-lg shadow-blue-400"
+    bg-slate-300 border-blue-500 rounded-md shadow-lg shadow-blue-400"
     >
       <Form {...form}>
         <form className="flex flex-col" onSubmit={form.handleSubmit(onSubmit)}>

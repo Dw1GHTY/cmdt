@@ -4,11 +4,15 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="flex justify-center items-center bg-gradient-to-r from-cyan-200 via-blue-800 to-white size-full">
+    <div
+      className="
+    flex justify-center items-center 
+    bg-gradient-to-br from-cyan-200 via-purple-500 to-white size-full"
+    >
       <section
         className="
       flex flex-row justify-center items-center flex-wrap
-      w-full md:w-2/3 border-x-2 border-dotted border-white mt-28"
+      w-full md:w-full border-x-2 border-dotted border-white mt-28"
       >
         <ContentCard cardTitle="Certifications">
           <BulletArticle

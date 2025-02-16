@@ -25,7 +25,7 @@ const Locations: React.FC = () => {
     <div
       className="
       flex w-full my-6 font-sans
-      border-y-2
+      border-y-2 border-slate-300 border-opacity-35 shadow-inner shadow-slate-400
       bg-cover bg-center bg-no-repeat relative"
       style={{
         backgroundImage: "url('/locations-bg.jpg')",
