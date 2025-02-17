@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { transport } from "@/lib/nodemailer";
 import Mail from "nodemailer/lib/mailer";
+import { saveContactUsData } from "@/lib/mongo/contactUsEmailFunctions";
 
 export async function POST(request: NextRequest) {
   const requestBody = await request.json();
@@ -46,7 +47,10 @@ export async function POST(request: NextRequest) {
     });
 
   try {
+    //? send the email
     await sendMailPromise();
+    //? save the email in mongoDB
+    await saveContactUsData(requestBody);
     return NextResponse.json({ message: "Email sent!" });
   } catch (e) {
     return NextResponse.json({ error: e }, { status: 500 });

@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import ReactQueryProvider from "@/components/ReactQueryProvider";
 import { Geist, Geist_Mono } from "next/font/google";
 import { connectToMongoDB } from "../../db_services/db";
+import { Toaster } from "@/components/ui/toaster";
 import type { Metadata } from "next";
 
 const geistSans = Geist({
@@ -40,6 +41,7 @@ export default function RootLayout({
             <Navbar />
           </header>
           <main className="flex flex-grow bg-white">{children}</main>
+          <Toaster />
           <footer className="flex">
             <Footer />
           </footer>

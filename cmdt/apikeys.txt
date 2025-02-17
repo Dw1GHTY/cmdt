@@ -1,6 +1,0 @@
-DB_URI="mongodb+srv://mihmare:bicikl06@testcluster.bwpzb7z.mongodb.net/completemobiledrugtesting?retryWrites=true&w=majority&appName=TestCluster"
-DB_NAME="completemobiledrugtesting"
-COLLECTION_NAME="cmdt"
-
-COMPANY_EMAIL="mih.mare@gmail.com"
-COMPANY_PASSWORD="cfvt paqj jeop emse"
