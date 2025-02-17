@@ -16,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { contactUsSchema } from "@/lib/schemas";
 import { Textarea } from "../ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 
 async function sendEmail(data: z.infer<typeof contactUsSchema>) {
   console.log(`sendEmail invoked: ${data}`);
@@ -32,16 +33,21 @@ async function sendEmail(data: z.infer<typeof contactUsSchema>) {
       console.log(err);
     });
 }
-async function onSubmit(values: z.infer<typeof contactUsSchema>) {
-  console.log(`onSubmit in client: ${values}`);
-  try {
-    await sendEmail(values);
-  } catch (err) {
-    alert(`Error sending email!, error:\n  ${err}`);
-  } finally {
-  }
-}
+
 const ContactUsForm = () => {
+  const { toast } = useToast();
+  async function onSubmit(values: z.infer<typeof contactUsSchema>) {
+    try {
+      await sendEmail(values);
+    } catch (err) {
+      alert(`Error sending email!, error:\n  ${err}`);
+    } finally {
+      toast({
+        title: "Email sent!",
+        description: "We will get back to you as soon as possible!",
+      });
+    }
+  }
   const form = useForm<z.infer<typeof contactUsSchema>>({
     resolver: zodResolver(contactUsSchema),
     defaultValues: {

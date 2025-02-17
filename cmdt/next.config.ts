@@ -4,9 +4,9 @@ const nextConfig: NextConfig = {
   /* config options here */
   experimental: {
     serverActions: {
-      bodySizeLimit: '5mb'  //! Exposed to attack
-    }
-  }
+      bodySizeLimit: "5mb", //! Exposed to attack
+    },
+  },
 };
 
 export default nextConfig;

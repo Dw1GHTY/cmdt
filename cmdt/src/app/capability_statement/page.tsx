@@ -6,14 +6,17 @@ const page = () => {
   return (
     <div
       className="
-    flex justify-center items-center 
-    bg-gradient-to-br from-cyan-200 via-purple-500 to-white size-full"
+    flex justify-center items-center font-sans 
+    bg-gradient-to-br from-slate-200 via-blue-400 to-white size-full"
     >
       <section
         className="
       flex flex-row justify-center items-center flex-wrap
-      w-full md:w-full border-x-2 border-dotted border-white mt-28"
+      w-full md:w-2/3 border-x-2 border-dotted border-white mt-28"
       >
+        <h2 className="text-center text-6xl text-blue-900 font-semibold italic mb-4">
+          Capability Statement
+        </h2>
         <ContentCard cardTitle="Certifications">
           <BulletArticle
             menus={[
