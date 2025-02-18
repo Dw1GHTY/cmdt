@@ -1,7 +1,7 @@
 "use server";
 
 import Franchise from "@/models/franchiseModel";
-import { connectToMongoDB } from "../../db_services/db";
+import { connectToMongoDB } from "../../../db_services/db";
 
 export const addFranchise = async (formData: FormData) => {
   await connectToMongoDB(); // Ensure MongoDB connection
