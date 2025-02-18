@@ -14,8 +14,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { addFranchise } from "@/lib/actions";
-import { franchiseSchema } from "@/lib/schemas";
+import { addFranchise } from "@/lib/actions/actions";
+import { franchiseSchema } from "@/lib/zod/schemas";
 
 const CreateFranchiseForm: React.FC = () => {
   const form = useForm<z.infer<typeof franchiseSchema>>({

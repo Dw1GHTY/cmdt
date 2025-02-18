@@ -14,7 +14,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { contactUsSchema } from "@/lib/schemas";
+import { contactUsSchema } from "@/lib/zod/schemas";
 import { Textarea } from "../ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
