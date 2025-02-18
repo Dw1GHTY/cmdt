@@ -18,25 +18,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://cmdt.vercel.app/drug_testing",
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.6,
+      priority: 0.8,
     },
     {
       url: "https://cmdt.vercel.app/dna_paternity_testing",
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.5,
+      priority: 0.8,
     },
     {
       url: "https://cmdt.vercel.app/background_screening",
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.5,
+      priority: 0.8,
     },
     {
       url: "https://cmdt.vercel.app/capability_statement",
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.4,
+      priority: 0.7,
     },
   ];
 }

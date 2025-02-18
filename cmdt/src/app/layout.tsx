@@ -19,8 +19,24 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Complete Mobile Drug Testing",
-  description: "A drug testing company based in Wisconsin, USA",
+  description:
+    "Established in 2011, Complete Mobile Drug Testing has become a trusted provider of drug testing, pre-employment background screening and paternity testing.",
   manifest: "/manifest.ts",
+  robots: {
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    siteName: "Complete Mobile Drug Testing",
+    type: "website",
+    title: "Complete Mobile Drug Testing",
+    description: "pre-employment background screening and paternity testing.",
+    images: "https://cmdt.vercel.app/drug-test.jpg",
+  },
 };
 
 export default function RootLayout({

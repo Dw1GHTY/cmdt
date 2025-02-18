@@ -2,11 +2,13 @@ import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
+    rules: [
+    {
       userAgent: "*",
       allow: "/",
-      disallow: "/admin/",
+      disallow: ["/admin", "/api/email/contact"]
     },
+  ],
     sitemap: "https://cmdt.vercel.app/sitemap.xml",
   };
 }
