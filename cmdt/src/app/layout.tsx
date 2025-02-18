@@ -20,6 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Complete Mobile Drug Testing",
   description: "A drug testing company based in Wisconsin, USA",
+  manifest: "/manifest.ts",
 };
 
 export default function RootLayout({
