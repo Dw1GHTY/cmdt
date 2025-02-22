@@ -46,7 +46,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   connectToMongoDB();
-  //! useQuery ce koristiti pojedinacno Navbar, NavMenuMobile i Home Page
   return (
     <html lang="en" className="">
       <Analytics />
