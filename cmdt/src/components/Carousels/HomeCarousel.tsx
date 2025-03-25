@@ -57,6 +57,7 @@ const HomeCarousel: React.FC<HomeCarouselProps> = (props) => {
                       layout="fill"
                       objectFit="cover"
                       className="rounded-lg"
+                      priority={true}
                     />
                   </div>
 
