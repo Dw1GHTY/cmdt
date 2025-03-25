@@ -2,6 +2,28 @@ import BulletArticle from "@/components/Content/BulletArticle";
 import InfoArticle from "@/components/Content/InfoArticle";
 import PageTitlePicture from "@/components/Content/PageTitlePicture";
 import React from "react";
+import { Metadata } from "next";
+
+export const generateMetadata = (): Metadata => {
+  return {
+    title: "DNA Paternity Testing | Complete Mobile Drug Testing",
+    description:
+      "Accurate and court-admissible DNA paternity testing to establish biological relationships. We offer legal, personal, and immigration DNA testing.",
+    openGraph: {
+      siteName: "Complete Mobile Drug Testing",
+      type: "website",
+      title: "DNA Paternity Testing | Complete Mobile Drug Testing",
+      description:
+        "Our DNA paternity tests provide definitive proof of biological relationships. Legal DNA testing is admissible in court for child support, immigration, and other legal purposes.",
+      images: "https://cmdt.vercel.app/dna-test.jpg",
+      url: "https://cmdt.vercel.app/dna_paternity_testing",
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+};
 
 const page = () => {
   return (

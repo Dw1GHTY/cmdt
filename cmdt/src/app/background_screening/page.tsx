@@ -2,11 +2,32 @@ import BulletArticle from "@/components/Content/BulletArticle";
 import InfoArticle from "@/components/Content/InfoArticle";
 import PageTitlePicture from "@/components/Content/PageTitlePicture";
 import React from "react";
+import { Metadata } from "next";
+
+export const generateMetadata = (): Metadata => {
+  return {
+    title: "Background Screening | Complete Mobile Drug Testing",
+    description:
+      "Comprehensive pre-employment background screening services, including criminal history checks, employment verification, driving records, and more.",
+    openGraph: {
+      siteName: "Complete Mobile Drug Testing",
+      type: "website",
+      title: "Background Screening | Complete Mobile Drug Testing",
+      description:
+        "CMD provides reliable background checks, including nationwide criminal history, employment verification, credit reports, and driving records to help businesses make informed hiring decisions.",
+      images: "https://cmdt.vercel.app/background-check.jpg",
+      url: "https://cmdt.vercel.app/background_screening",
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+};
 
 const page = () => {
   return (
     <div className="flex flex-col justify-center items-center bg-white size-full">
-      {/* //! Big image instead of Separator tag */}
       <PageTitlePicture
         imagePath="/background-check.jpg"
         imageAlt="Pre-employment background check"

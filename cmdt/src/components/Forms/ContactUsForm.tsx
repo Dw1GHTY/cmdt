@@ -17,6 +17,27 @@ import { Input } from "@/components/ui/input";
 import { contactUsSchema } from "@/lib/zod/schemas";
 import { Textarea } from "../ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { Metadata } from "next";
+
+export const generateMetadata = (): Metadata => {
+  return {
+    title: "Contact Us | Complete Mobile Drug Testing",
+    description:
+      "Get in touch with Complete Mobile Drug Testing for drug testing, background screening, and fingerprinting services. Fill out our contact form today!",
+    openGraph: {
+      siteName: "Complete Mobile Drug Testing",
+      type: "website",
+      title: "Contact Us | Complete Mobile Drug Testing",
+      description:
+        "Reach out to CMDT for professional drug testing and background screening services. Our team is ready to assist you.",
+      url: "https://cmdt.vercel.app/contact",
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+};
 
 async function sendEmail(data: z.infer<typeof contactUsSchema>) {
   console.log(`sendEmail invoked: ${data}`);

@@ -1,6 +1,27 @@
 import ContentCard from "@/components/Cards/ContentCard";
 import BulletArticle from "@/components/Content/BulletArticle";
 import React from "react";
+import { Metadata } from "next";
+
+export const generateMetadata = (): Metadata => {
+  return {
+    title: "Capability Statement | Complete Mobile Drug Testing",
+    description:
+      "Complete Mobile Drug Testing (CMDT) is a certified women-owned business providing drug and alcohol testing, background screening, and fingerprinting services since 2011.",
+    openGraph: {
+      siteName: "Complete Mobile Drug Testing",
+      type: "website",
+      title: "Capability Statement | Complete Mobile Drug Testing",
+      description:
+        "CMDT offers mobile testing 24/7, paperless chain of custody, and comprehensive background searches. Trusted by Wal-Mart, UPS, GE Healthcare, and more.",
+      url: "https://cmdt.vercel.app/capability_statement",
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+};
 
 const page = () => {
   return (
