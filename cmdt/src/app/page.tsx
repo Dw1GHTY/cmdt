@@ -17,12 +17,14 @@ const page = () => {
             title: "Drug Testing",
             caption: "Efficient drug testing",
             linkPath: "drug_testing",
+            buttonText: "Discover drug testing services",
           },
           {
             imagePath: "/dna-test.jpg",
             imageAlt: "An image of a dna test",
             title: "DNA paternity testing",
             linkPath: "dna_paternity_testing",
+            buttonText: "View all sorts of dna paternity tests we offer",
           },
           {
             imagePath: "/background-screening.jpg",
@@ -30,6 +32,7 @@ const page = () => {
             title: "Background Screening",
             caption: "Pre employment background screening and more",
             linkPath: "/background_screening",
+            buttonText: "Choose the exact background screening you want",
           },
         ]}
       />

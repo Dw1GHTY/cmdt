@@ -18,6 +18,7 @@ type TSlide = {
   imagePath: string;
   imageAlt: string;
   linkPath: string;
+  buttonText: string;
 };
 
 interface HomeCarouselProps {
@@ -76,7 +77,7 @@ const HomeCarousel: React.FC<HomeCarouselProps> = (props) => {
                       href={slide.linkPath}
                       className="mt-4 px-6 py-2 bg-white text-black font-semibold rounded-lg hover:bg-slate-400 hover:ring-1 ring-white"
                     >
-                      Learn More
+                      {slide.buttonText}
                     </Link>
                   </div>
                 </Card>

@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   description:
     "Established in 2011, Complete Mobile Drug Testing has become a trusted provider of drug testing, pre-employment background screening and paternity testing.",
   manifest: "/manifest.ts",
+  twitter: {
+    title: "Complete Mobile Drug Testing",
+    description: "Pre-employment background screening and paternity testing.",
+  },
   robots: {
     googleBot: {
       index: true,
@@ -34,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "Complete Mobile Drug Testing",
     type: "website",
     title: "Complete Mobile Drug Testing",
-    description: "pre-employment background screening and paternity testing.",
+    description: "Pre-employment background screening and paternity testing.",
     images: "https://cmdt.vercel.app/drug-test.jpg",
   },
 };
@@ -45,7 +49,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   connectToMongoDB();
-  //! useQuery ce koristiti pojedinacno Navbar, NavMenuMobile i Home Page
   return (
     <html lang="en" className="">
       <body
