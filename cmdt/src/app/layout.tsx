@@ -5,6 +5,7 @@ import ReactQueryProvider from "@/components/ReactQueryProvider";
 import { Geist, Geist_Mono } from "next/font/google";
 import { connectToMongoDB } from "../../db_services/db";
 import { Toaster } from "@/components/ui/toaster";
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 
 const geistSans = Geist({
@@ -51,6 +52,7 @@ export default function RootLayout({
   connectToMongoDB();
   return (
     <html lang="en" className="">
+      <Analytics />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased 
         flex flex-col min-h-screen w-screen

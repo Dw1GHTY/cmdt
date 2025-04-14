@@ -2,8 +2,30 @@ import BulletArticle from "@/components/Content/BulletArticle";
 import InfoArticle from "@/components/Content/InfoArticle";
 import PageTitlePicture from "@/components/Content/PageTitlePicture";
 import { Separator } from "@/components/ui/separator";
+import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
+
+export const generateMetadata = (): Metadata => {
+  return {
+    title: "Drug Testing | Complete Mobile Drug Testing",
+    description:
+      "Complete Mobile Drug Testing provides DOT & Non-DOT drug testing, including pre-employment, reasonable suspicion, random, post-accident, and hair follicle testing. Ensuring compliance with DOT regulations.",
+    openGraph: {
+      siteName: "Complete Mobile Drug Testing",
+      type: "website",
+      title: "Drug Testing | Complete Mobile Drug Testing",
+      description:
+        "We offer DOT & Non-DOT drug testing, ensuring compliance with federal regulations. Services include pre-employment, random, post-accident, and hair follicle testing.",
+      images: "https://cmdt.vercel.app/drug-test.jpg",
+      url: "https://cmdt.vercel.app/drug_testing",
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+};
 
 const page = () => {
   return (
